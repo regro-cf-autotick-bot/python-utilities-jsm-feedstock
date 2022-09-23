@@ -1,5 +1,5 @@
 {% set name = "python-utilities-jsm" %}
-{% set version = "1.1.2" %}
+{% set version = "1.1.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/python-utilities-jsm-{{ version }}.tar.gz
-  sha256: 287268ef5ded433a3c5d94574e264d41bb87f3e10d2bf36bf88533e6ee270f3b
+  sha256: 432361767887472444ff2618e8854fd64200dc2a7053db545003571fca049e9f
 
 build:
   noarch: python
