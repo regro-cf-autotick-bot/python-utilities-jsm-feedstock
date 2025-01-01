@@ -6,18 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/python-utilities-jsm-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/python-utilities-jsm-{{ version }}.tar.gz
   sha256: 432361767887472444ff2618e8854fd64200dc2a7053db545003571fca049e9f
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - bagit
     - beautifulsoup4
@@ -26,7 +26,7 @@ requirements:
     - chardet
     - ipykernel
     - openpyxl
-    - python >=3.6
+    - python >={{ python_min }}
     - regex
     - requests
     - six
@@ -39,6 +39,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/jonathanmorgan/python_utilities
